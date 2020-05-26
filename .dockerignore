@@ -1,0 +1,20 @@
+# Deployment/CI yml files
+config.yml
+_config.yml
+
+# Dockerfiles
+Dockerfile
+
+# Directories
+.idea
+*.iml
+**/.DS_Store
+.git
+.gitignore
+.circleci
+
+# Temporary log files
+**/*.log
+
+# Maven dependencies
+target/
