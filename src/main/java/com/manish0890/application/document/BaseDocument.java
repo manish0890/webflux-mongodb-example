@@ -9,6 +9,8 @@ import java.util.Arrays;
 import java.util.List;
 
 public abstract class BaseDocument {
+
+    // Id annotation makes sure that this is going to be unique throughout repository
     @Id
     private String id;
 

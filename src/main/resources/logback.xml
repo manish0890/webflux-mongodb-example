@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <timestamp key="byDay" datePattern="MMddyyyy" />
+
+    <!-- standard console appender -->
+    <appender name="stdout" class="ch.qos.logback.core.ConsoleAppender">
+        <layout class="ch.qos.logback.classic.PatternLayout">
+            <pattern>%d{MM/dd/yyyy HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %replace(%msg){'[\n\t\r]','_'}%n</pattern>
+        </layout>
+    </appender>
+
+    <Logger name="com.manish0890.application" level="INFO" />
+    <Logger name="org.mongodb.driver" level="INFO" />
+
+    <root level="INFO">
+        <appender-ref ref="stdout" />
+    </root>
+
+</configuration>
