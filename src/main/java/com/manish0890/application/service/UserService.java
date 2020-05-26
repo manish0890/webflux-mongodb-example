@@ -1,9 +1,9 @@
-package com.manish0890.application.mongo.service;
+package com.manish0890.application.service;
 
 import com.manish0890.application.exception.NotFoundException;
 import com.manish0890.application.exception.ServiceException;
-import com.manish0890.application.mongo.document.User;
-import com.manish0890.application.mongo.repository.UserReactiveRepository;
+import com.manish0890.application.document.User;
+import com.manish0890.application.repository.UserReactiveRepository;
 import org.apache.commons.beanutils.BeanUtilsBean;
 import org.apache.commons.lang3.BooleanUtils;
 import org.apache.commons.lang3.StringUtils;

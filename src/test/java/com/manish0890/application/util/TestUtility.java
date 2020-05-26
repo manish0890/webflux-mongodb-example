@@ -1,6 +1,6 @@
 package com.manish0890.application.util;
 
-import com.manish0890.application.mongo.document.User;
+import com.manish0890.application.document.User;
 
 import java.util.Date;
 

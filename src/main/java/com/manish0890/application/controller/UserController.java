@@ -1,8 +1,8 @@
 package com.manish0890.application.controller;
 
 import com.manish0890.application.dto.UserDto;
-import com.manish0890.application.mongo.document.User;
-import com.manish0890.application.mongo.service.UserService;
+import com.manish0890.application.document.User;
+import com.manish0890.application.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;

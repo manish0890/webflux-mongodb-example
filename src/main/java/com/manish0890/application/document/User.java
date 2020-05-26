@@ -1,4 +1,4 @@
-package com.manish0890.application.mongo.document;
+package com.manish0890.application.document;
 
 import org.springframework.data.mongodb.core.mapping.Document;
 

@@ -1,8 +1,8 @@
-package com.manish0890.application.mongo.repository;
+package com.manish0890.application.repository;
 
 import com.manish0890.application.DataCleanup;
 import com.manish0890.application.TestConfig;
-import com.manish0890.application.mongo.document.User;
+import com.manish0890.application.document.User;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.springframework.beans.factory.annotation.Autowired;
