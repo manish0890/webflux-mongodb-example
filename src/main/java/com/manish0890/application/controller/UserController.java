@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import static com.manish0890.application.Constants.RequestMappingConstants.*;
+import static com.manish0890.application.constants.RequestMappingConstants.*;
 
 @RestController
 @RequestMapping(USER)

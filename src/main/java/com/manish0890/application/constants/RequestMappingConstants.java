@@ -1,4 +1,4 @@
-package com.manish0890.application.Constants;
+package com.manish0890.application.constants;
 
 public class RequestMappingConstants {
 
