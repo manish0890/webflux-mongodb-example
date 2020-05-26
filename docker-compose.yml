@@ -1,0 +1,28 @@
+version: "3"
+
+services:
+  service:
+    build: .
+    command: ["/bin/sh", "./bin/wait.sh", "10"]
+    ports:
+    - "8090:8090"
+    links:
+      - mongodb
+    depends_on:
+      - mongodb
+    environment:
+      SPRING_PROFILE: docker
+
+  mongodb:
+    hostname: mongodb
+    image: mongo:4.0
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: "root"
+      MONGO_INITDB_ROOT_PASSWORD: "example"
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongodb_data:/data/db
+
+volumes:
+  mongodb_data:

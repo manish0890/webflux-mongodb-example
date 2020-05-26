@@ -10,32 +10,47 @@ More goodies coming up.....
 - Unix based system
 - Java 13
 - Docker
+- Docker-compose
 
 ### Scripts/Commands to run application
 
 Start Local MongoDB Repository
-```bash
+```shell script
 ./bin/docker-run-mongodb.sh
 ```
 
 Pull project dependencies 
-```bash
+```shell script
 ./mvnw clean install -DskipTests=true
 ```
 
 Run Unit Tests
-```bash
+```shell script
 ./mvnw clean test
 ```
 
 Run Integration Tests
-```bash
+```shell script
 ./mvnw clean -P integration-test test
 ```
 
-Start Application
-```bash
+Start Application using maven wrapper
+```shell script
 SPRING_PROFILE=dev ./mvnw clean spring-boot:run
+```
+
+Start Application usng docker-compose    
+(make sure nothing is running on port 27017)
+```shell script
+./bin/start-service-with-db.sh
+```
+Stop All service and db (This will not delete data)
+```shell script
+docker-compose down
+```
+top All services and db and remove data
+```shell script
+docker-compose down -v
 ```
 
 Once the application is running the REST documentation and tester is available via Swagger at 

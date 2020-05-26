@@ -5,6 +5,9 @@ WORKDIR /service
 
 # Add all files to work directory
 ADD . /service
+#ADD https://github.com/ufoscout/docker-compose-wait/releases/download/2.7.3/wait /service/wait
+#
+#RUN chmod +x /service/wait
 
 # Update libraries
 RUN apk update && apk add wget --no-cache
