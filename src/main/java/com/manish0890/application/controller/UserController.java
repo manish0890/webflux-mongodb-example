@@ -1,8 +1,8 @@
 package com.manish0890.application.controller;
 
 import com.manish0890.application.dto.UserDto;
-import com.manish0890.application.mongo.document.User;
-import com.manish0890.application.mongo.service.UserService;
+import com.manish0890.application.document.User;
+import com.manish0890.application.service.UserService;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -14,7 +14,7 @@ import javax.validation.Valid;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
-import static com.manish0890.application.Constants.RequestMappingConstants.USER;
+import static com.manish0890.application.Constants.RequestMappingConstants.*;
 
 @RestController
 @RequestMapping(USER)
@@ -30,25 +30,25 @@ public class UserController {
                 .map(this::convertToDto);
     }
 
-    @GetMapping(value = "/{id}")
+    @GetMapping(USER_BY_ID)
     public Mono<UserDto> getById(@PathVariable(value = "id") String id) {
         return userService.getById(id)
                 .map(this::convertToDto);
     }
 
-    @GetMapping(value = "/phone/{phone}")
+    @GetMapping(USER_GET_BY_PHONE)
     public Mono<UserDto> getByPhoneNumber(@PathVariable("phone") @NotBlank @Size(min = 10, max = 10) String phone) {
         return userService.getByPhoneNumber(phone)
                 .map(this::convertToDto);
     }
 
-    @GetMapping(value = "/zip/{zip}")
+    @GetMapping(USER_GET_BY_ZIP)
     public Flux<UserDto> getByZipCode(@PathVariable("zip") @NotBlank @Size(min = 5, max = 5) String zip) {
         return userService.getByZip(zip)
                 .map(this::convertToDto);
     }
 
-    @GetMapping(value = "/getAll")
+    @GetMapping(USER_GET_ALL)
     public Flux<UserDto> getAll() {
         return userService.getAll()
                 .map(this::convertToDto);
@@ -60,7 +60,7 @@ public class UserController {
                 .map(this::convertToDto);
     }
 
-    @DeleteMapping(value = "/{id}")
+    @DeleteMapping(USER_BY_ID)
     public Mono<Void> deleteById(@PathVariable(value = "id") String id) {
         return userService.deleteById(id);
     }

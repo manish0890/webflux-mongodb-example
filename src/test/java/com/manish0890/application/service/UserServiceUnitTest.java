@@ -1,8 +1,8 @@
-package com.manish0890.application.mongo.service;
+package com.manish0890.application.service;
 
 import com.manish0890.application.exception.NotFoundException;
-import com.manish0890.application.mongo.document.User;
-import com.manish0890.application.mongo.repository.UserReactiveRepository;
+import com.manish0890.application.document.User;
+import com.manish0890.application.repository.UserReactiveRepository;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Nested;
 import org.junit.jupiter.api.Test;
