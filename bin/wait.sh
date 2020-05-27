@@ -8,6 +8,6 @@ sleep "${1}"s
 echo "Wait time over, starting service now"
 echo "---------------------"
 
-LOC="$(cd "$(dirname "$0")" >/dev/null 2>?1 ; pwd -P )"
+BIN_DIR="$(cd "$(dirname "$0")" >/dev/null 2>?1 ; pwd -P )"
 
-sh "${LOC}"/entry-point.sh
+sh "${BIN_DIR}"/entry-point.sh
