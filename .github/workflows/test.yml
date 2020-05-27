@@ -14,7 +14,7 @@ jobs:
         uses: actions/setup-java@v1.3.0
         with:
           java-version: 13.0.2
-      - name: Build with Maven
+      - name: Run Unit Tests
         run: mvn clean test
 
   integration-test:
@@ -25,5 +25,18 @@ jobs:
         uses: actions/setup-java@v1.3.0
         with:
           java-version: 13.0.2
-      - name: Build with Maven
+      - name: Run Integration Tests
         run: mvn -P test-it test
+
+  javadoc:
+    runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v2
+        - name: Setup Java JDK
+          uses: actions/setup-java@v1.3.0
+          with:
+            java-version: 13.0.2
+        - name: Run Maven Install
+          run: mvn install
+        - name: Run Javadoc plugin
+          run: mvn javadoc:javadoc
