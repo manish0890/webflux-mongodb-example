@@ -1,8 +1,11 @@
 package com.manish0890.application.dto;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
+
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
 
+@JsonInclude(JsonInclude.Include.NON_NULL)
 public class UserDto extends BaseDto {
 
     @NotBlank(message = "Name must be provided")

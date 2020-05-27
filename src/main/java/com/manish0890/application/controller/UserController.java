@@ -21,8 +21,14 @@ import static com.manish0890.application.constants.RequestMappingConstants.*;
 @Validated
 public class UserController {
 
-    private UserService userService;
-    private ModelMapper modelMapper;
+    private final UserService userService;
+    private final ModelMapper modelMapper;
+
+    @Autowired
+    public UserController(UserService userService){
+        this.userService = userService;
+        modelMapper = new ModelMapper();
+    }
 
     @PostMapping
     public Mono<UserDto> create(@Valid @RequestBody UserDto userDto) {
@@ -71,15 +77,5 @@ public class UserController {
 
     private User convertToDocument(UserDto userDto) {
         return modelMapper.map(userDto, User.class);
-    }
-
-    @Autowired
-    public void setUserService(UserService userService) {
-        this.userService = userService;
-    }
-
-    @Autowired
-    public void setModelMapper(ModelMapper modelMapper) {
-        this.modelMapper = modelMapper;
     }
 }
