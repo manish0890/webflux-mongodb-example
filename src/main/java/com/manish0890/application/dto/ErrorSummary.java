@@ -6,6 +6,7 @@ import com.fasterxml.jackson.annotation.JsonInclude;
 public class ErrorSummary {
 
     private String message;
+    private String error;
     private String timestamp;
 
     public ErrorSummary() {
@@ -25,5 +26,13 @@ public class ErrorSummary {
 
     public void setTimestamp(String timestamp) {
         this.timestamp = timestamp;
+    }
+
+    public String getError() {
+        return error;
+    }
+
+    public void setError(String error) {
+        this.error = error;
     }
 }
