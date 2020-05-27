@@ -30,13 +30,13 @@ jobs:
 
   javadoc:
     runs-on: ubuntu-latest
-      steps:
-        - uses: actions/checkout@v2
-        - name: Setup Java JDK
-          uses: actions/setup-java@v1.3.0
-          with:
-            java-version: 13.0.2
-        - name: Run Maven Install
-          run: mvn install
-        - name: Run Javadoc plugin
-          run: mvn javadoc:javadoc
+    steps:
+      - uses: actions/checkout@v2
+      - name: Setup Java JDK
+        uses: actions/setup-java@v1.3.0
+        with:
+          java-version: 13.0.2
+      - name: Run Maven Install
+        run: mvn install
+      - name: Run Javadoc plugin
+        run: mvn javadoc:javadoc
